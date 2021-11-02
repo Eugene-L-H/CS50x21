@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: Has the same speed results as Selection sort except when run on a sorted list it has a speed that looks closer to Omega(n).
+
+sort2 uses: Merge sort
+
+How do you know?: Because this program consitantly has very similar run times across all tests. It also scales sonsitantly with O(n log n) and Omega(n log n).
+
+sort3 uses: Selection sort
+
+How do you know?: The speed seems to scale at what looks like O(n**2) or Omega(n**2) no matter which test is ran.

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+            // With Javascript, add logic so that...
+            //  - When the correct answer choice is clicked, the button should turn green and text should appear beneath the question that says "Correct".
+            document.addEventListener('DOMContentLoaded', function() {
+                
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click', function(){
+                    correct.style.backgroundColor = 'green';
+                    document.querySelector('#response1').innerHTML = 'Correct!';
+                });
+
+                // Incorrect answer.
+                let incorrects = document.querySelectorAll('.incorrect');
+                for (let i = 0; i < incorrects.length; i++) {
+                    incorrects[i].addEventListener('click', function(){
+                        incorrects[i].style.backgroundColor = 'red';
+                        document.querySelector('#response1').innerHTML = 'Inorrect';
+                    });          
+                };
+            
+
+                // Free response.
+                document.querySelector('#check').addEventListener('click', function(){
+
+                    let input = document.querySelector('input');
+                    if (input.value.toLowerCase() === "kubi-wa" || input.value.toLowerCase() === "kubi wa" ){
+                        input.style.backgroundColor = "green";
+                        document.querySelector('#response2').innerHTML = 'Correct!';
+                    }
+                    else{
+                        input.style.backgroundColor = 'red';
+                        document.querySelector('#response2').innerHTML = 'Incorrect';
+                    }
+                });
+            });
+            
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                    <!-- Add a multiple choice question to the HTML page -->
+                    <!-- Use an h3 heading for the question text -->
+                    <h3>Who was the founder of Shotokan Karate?</h3>
+                    <!-- Use one button for each possible answer choice -->
+                    <!-- Have at least 3 answer choiced of which ONE is the correct answer -->
+                    <button class="incorrect">Kenwa Mabuni</button>
+                    <button class="incorrect">Choki Matobu</button>
+                    <button class="incorrect">Mas Oyama</button>
+                    <button class="correct">Gichin Funakoshi</button>
+                    <button class="incorrect">Chojun Miyagi</button>
+                
+            
+                    <p id="response1"></p>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- Add a free response question to the HTML page.
+                    - Use an h3 heading for the queston.
+                    - Use one input for the response and a button to confirm answer.
+                    - With JavaScript, add logic so that...
+                        - When an incorrect answer choice is provided, the text field should turn red and text should appear beneath the question that says "Incorrect".
+                            - When the correct answer choice is provided, the text field should turn green and text should appear beneath the question that says "Correct!". -->
+                <h3>What is the Japanese name for the "Neck-Ring" takedown in Karate?</h3>
+                <input type="text"></input>
+                <button id="check">Check Answer</button>
+                
+                <p id="response2"></p> 
+
+            </div>
+
+        </div>
+    </body>
+</html>
